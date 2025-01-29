@@ -29,11 +29,14 @@ jobs:
         uses: actions/checkout@v4.2.2
 
       - name: Setup Hathora CLI
-        uses: CoreLoopGames/setup-hathora-cli@v2
+        uses: CoreLoopGames/setup-hathora-cli@v3
         with:
           appId: ${{ secrets.HATHORA_APP_ID }}
           token: ${{ secrets.HATHORA }}
           version: 0.3.1
+
+      - name: Print Hathora CLI Version
+        run: hathora --version
 
       # Add more steps as needed for your workflow
 ```
