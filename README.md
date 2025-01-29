@@ -13,7 +13,7 @@ Here are the available input parameters for the Setup Yarn Berry Action:
 
 ## Example Usage
 
-Here's a basic example demonstrating how to utilize the Setup Yarn Berry Action to set up the default version of Yarn and install dependencies for the current Node.js project in the GitHub workflow:
+Here's a basic example demonstrating how to utilize the Setup Hathora CLI Action in the GitHub workflow:
 
 ```yaml
 name: Node.js CI
