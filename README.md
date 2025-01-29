@@ -6,10 +6,11 @@ The Setup Hathora CLI Action is a [GitHub action](https://github.com/features/ac
 
 Here are the available input parameters for the Setup Yarn Berry Action:
 
-| Name    | Type    | Description                                |
-|---------| ------- |--------------------------------------------|
-| `appId` | String  | The Hathora App-ID to use for CLI commands |
-| `token` | Boolean | The Hathora token to use for CLI commands  |
+| Name      | Type    | Description                                                                                                                                                  |
+|-----------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `appId`   | String  | The Hathora App-ID to use for CLI commands                                                                                                                   |
+| `token`   | Boolean | The Hathora token to use for CLI commands                                                                                                                    |
+| `version` | String  | The CLI version to install. Use "main" to install the latest version. See [Releases](https://github.com/hathora/ci/releases) to check the released versions. |
 
 ## Example Usage
 
@@ -28,10 +29,11 @@ jobs:
         uses: actions/checkout@v4.2.2
 
       - name: Setup Hathora CLI
-        uses: CoreLoopGames/setup-hathora-cli@main
+        uses: CoreLoopGames/setup-hathora-cli@v2
         with:
           appId: ${{ secrets.HATHORA_APP_ID }}
           token: ${{ secrets.HATHORA }}
+          version: 0.3.1
 
       # Add more steps as needed for your workflow
 ```
