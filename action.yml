@@ -15,3 +15,4 @@ runs:
         curl -s https://raw.githubusercontent.com/hathora/ci/main/install.sh | sh
         export HATHORA_TOKEN=${{ github.event.inputs.token }}
         export HATHORA_APP_ID=${{ github.event.inputs.appId }}
+      shell: bash
