@@ -32,8 +32,8 @@ jobs:
         uses: CoreLoopGames/setup-hathora-cli@v3
         with:
           appId: ${{ secrets.HATHORA_APP_ID }}
-          token: ${{ secrets.HATHORA }}
-          version: 0.3.1
+          token: ${{ secrets.HATHORA_TOKEN }}
+          version: 0.3.1 # or 'main' to always get the latest version
 
       - name: Print Hathora CLI Version
         run: hathora --version
