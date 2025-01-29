@@ -15,16 +15,16 @@ runs:
   steps:
     - name: Setup CLI
       run: |
-        if [ "${{ github.event.inputs.version }}" == "main" ]; then
+        if [ "${{ inputs.version }}" == "main" ]; then
           curl -s https://raw.githubusercontent.com/hathora/ci/main/install.sh | sh
         else
           INSTALL_DIR="/usr/local/bin"
           BINARY_NAME="hathora"
-          curl -s -L -o "$BINARY_NAME" "$DOWNLOAD_URL" "https://github.com/hathora/ci/releases/download/${{ github.event.inputs.version }}/hathora-linux-arm64"
+          curl -s -L -o "$BINARY_NAME" "$DOWNLOAD_URL" "https://github.com/hathora/ci/releases/download/${{ inputs.version }}/hathora-linux-arm64"
           chmod +x "${BINARY_NAME}"
             mv "${BINARY_NAME}" "${INSTALL_DIR}}"
         fi
         curl -s https://raw.githubusercontent.com/hathora/ci/main/install.sh | sh
-        export HATHORA_TOKEN=${{ github.event.inputs.token }}
-        export HATHORA_APP_ID=${{ github.event.inputs.appId }}
+        export HATHORA_TOKEN=${{ inputs.token }}
+        export HATHORA_APP_ID=${{ inputs.appId }}
       shell: bash
