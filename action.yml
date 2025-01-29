@@ -21,9 +21,9 @@ runs:
           INSTALL_DIR="/usr/local/bin"
           BINARY_NAME="hathora"
           echo "Downloading $BINARY_NAME version ${{ inputs.version }}..."
-          curl -s -L -o "$BINARY_NAME" "https://github.com/hathora/ci/releases/download/${{ inputs.version }}/hathora-linux-arm64"
-          chmod +x "$BINARY_NAME"
-            mv "$BINARY_NAME" "$INSTALL_DIR"
+          curl -s -L -o $BINARY_NAME https://github.com/hathora/ci/releases/download/${{ inputs.version }}/hathora-linux-arm64
+          chmod +x $BINARY_NAME
+          sudo mv $BINARY_NAME $INSTALL_DIR
         fi
         export HATHORA_TOKEN=${{ inputs.token }}
         export HATHORA_APP_ID=${{ inputs.appId }}
