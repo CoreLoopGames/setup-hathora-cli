@@ -2,10 +2,12 @@ name: Setup Hathora CLI
 description: 'Setting up the Hathora CLI'
 inputs:
   appId:
-    required: true
+    required: false
+    default: ''
     type: string
   token:
-    required: true
+    required: false
+    default: ''
     type: string
   version:
     default: 'main'
@@ -34,6 +36,11 @@ runs:
           chmod +x $BINARY_NAME
           sudo mv $BINARY_NAME $INSTALL_DIR
         fi
-        export HATHORA_TOKEN=${{ inputs.token }}
-        export HATHORA_APP_ID=${{ inputs.appId }}
+#       if input is given
+        if [ -n "${{ inputs.token }}" ]; then
+          export HATHORA_TOKEN=${{ inputs.token }}
+        fi
+        if [ -n "${{ inputs.appId }}" ]; then
+          export HATHORA_APP_ID=${{ inputs.appId }}
+        fi
       shell: bash
