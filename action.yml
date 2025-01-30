@@ -36,11 +36,10 @@ runs:
           chmod +x $BINARY_NAME
           sudo mv $BINARY_NAME $INSTALL_DIR
         fi
-#       if input is given
-        if [ -n "${{ inputs.token }}" ]; then
+        if [ "${{ inputs.token }}" != "" ]; then
           export HATHORA_TOKEN=${{ inputs.token }}
         fi
-        if [ -n "${{ inputs.appId }}" ]; then
+        if [ "${{ inputs.appId }}" != "" ]; then
           export HATHORA_APP_ID=${{ inputs.appId }}
         fi
       shell: bash
